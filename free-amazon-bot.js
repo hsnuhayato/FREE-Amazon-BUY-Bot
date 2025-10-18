@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name     Amazon-RefreshNoBot
-// @include  https://www.amazon.com/*
+// @include  https://www.amazon.co.jp/*
 // @include  http://localhost:800*
 // @version      v2.0
 // @description  This aint bot, its RefreshNoBot
@@ -53,8 +53,8 @@
 //____ REQUIRED FLAGS : AMAZON ID & PRICE CUTOFF _________________________
 
 
-let PRODUCT_ARRAY = ["B08WM28PVH", "B096YM573B", "B096WM6JFS", "B096YMW2FS", "B09B1DGRH4"];
-const CUTOFF_ARRAY = [500, 500, 500, 500, 500]; // No quotes
+let PRODUCT_ARRAY = ["B083R7H2SB"];
+const CUTOFF_ARRAY = [3000]; // No quotes
 
 //____ REQUIRED FLAGS : TESTMODE OR BUY MODE _____________________________
 
@@ -275,7 +275,7 @@ for (let i = 0; i < PRODUCT_ARRAY.length; i++) {
 
 
                                                 setTimeout(function() {
-                                                        window.open("https://www.amazon.com/gp/cart/view.html", '_blank');
+                                                        window.open("https://www.amazon.co.jp/gp/cart/view.html", '_blank');
                                                         window.close()
 
                                                 }, 2000)
@@ -323,7 +323,7 @@ for (let i = 0; i < PRODUCT_ARRAY.length; i++) {
                         }, 4000)
 
                         setTimeout(function() {
-                                location.href = "https://www.amazon.com/dp/" + AMAZON_PRODUCT_ID + "/"
+                                location.href = "https://www.amazon.co.jp/dp/" + AMAZON_PRODUCT_ID + "/"
                         }, 6000)
 
                         // MAIN PRODUCT PAGE OPERATIONS
@@ -361,7 +361,7 @@ for (let i = 0; i < PRODUCT_ARRAY.length; i++) {
 
                         } else {
                                 setTimeout(function() {
-                                        window.open("https://www.amazon.com/gp/offer-listing/" + AMAZON_PRODUCT_ID + "/ref=dp_olp_unknown_mbc", '_blank');
+                                        window.open("https://www.amazon.co.jp/gp/offer-listing/" + AMAZON_PRODUCT_ID + "/ref=dp_olp_unknown_mbc", '_blank');
                                         window.close()
 
                                 }, 3000)
@@ -377,7 +377,7 @@ for (let i = 0; i < PRODUCT_ARRAY.length; i++) {
                                 console.log('timeout1');
 
 
-                                location.href = "https://www.amazon.com/gp/offer-listing/" + AMAZON_PRODUCT_ID + "/ref=dp_olp_unknown_mbc";
+                                location.href = "https://www.amazon.co.jp/gp/offer-listing/" + AMAZON_PRODUCT_ID + "/ref=dp_olp_unknown_mbc";
                         }, 3000)
 
 
@@ -395,7 +395,7 @@ for (let i = 0; i < PRODUCT_ARRAY.length; i++) {
 
                                 setTimeout(function() {
                                         console.log('timeout2');
-                                        location.href = "https://www.amazon.com/gp/offer-listing/" + AMAZON_PRODUCT_ID + "/"
+                                        location.href = "https://www.amazon.co.jp/gp/offer-listing/" + AMAZON_PRODUCT_ID + "/"
                                 }, 2000)
 
                                 var Message = document.getElementsByClassName("a-text-bold aod-no-offer-normal-font")[0].innerHTML;
@@ -475,7 +475,7 @@ else if (document.getElementById('d').alt.includes('Dogs')) {
         console.log('Dogs of Amazon')
         setTimeout(function() {
 
-                location.href = 'https://www.amazon.com/gp/cart/view.html'
+                location.href = 'https://www.amazon.co.jp/gp/cart/view.html'
 
         }, 10000)
 
@@ -505,14 +505,14 @@ else if (document.URL.includes('/gp/cart/')) {
 
                 if (document.getElementsByClassName("a-size-medium a-color-base sc-price sc-white-space-nowrap").length > 0) {
 
-                        location.href = 'https://www.amazon.com/gp/buy/spc/handlers/display.html?hasWorkingJavascript=1'
+                        location.href = 'https://www.amazon.co.jp/gp/buy/spc/handlers/display.html?hasWorkingJavascript=1'
 
                 } else if (document.getElementById("g").innerHTML.includes('ref=cs_503_link') == true) {
 
 
                         console.log('Amazon 503 Cart error. Lets try cart again in 5 seconds')
                         setTimeout(function() {
-                                location.href = 'https://www.amazon.com/gp/cart/view.html'
+                                location.href = 'https://www.amazon.co.jp/gp/cart/view.html'
                         }, 5000)
 
 
